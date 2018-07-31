@@ -85,5 +85,13 @@ class User extends CI_Controller {
     redirect('user/login_view', 'refresh');
   }
 
+  public function users_list_view(){
+
+    $allUsersList = $this->user_model->getAllUsersList();    
+    $data = array(
+      "allUsersList" => $allUsersList
+      );
+    $this->load->view('users_list',$data);
+  }
 }
 ?>

@@ -15,7 +15,7 @@
   </head>
   <body>
 
-    <div class="container">
+    <div class="container" style="margin-top:10%;">
       <div class="row">
         <div class="col-md-4">
           <table class="table table-bordered table-striped">
@@ -41,7 +41,10 @@
           </table>
         </div>
       </div>
-      <a href="<?php echo base_url('user/user_logout');?>" >  <button type="button" class="btn-primary">Logout</button></a>
+      <a href="<?php echo base_url('user/user_logout');?>" >  <button type="button" class="btn-primary">Logout</button></a> 
+      <a href="<?php echo base_url('user/user_profile');?>" >Home</a> | 
+      <a href="<?php echo base_url('user/users_list_view');?>" >Users List</a> | 
+      <a href="<?php echo base_url('expense/expense_list_view');?>" >Expense List</a>
     </div>
   </body>
 </html>

@@ -36,5 +36,13 @@ class User_model extends CI_model{
     }
   }
 
+  public function getAllUsersList(){
+
+    $this->db->select('*');
+    $this->db->from('user');
+    $query = $this->db->get();
+   
+    return $query->result();
+  }
 }
 ?>
