@@ -15,10 +15,27 @@
   </head>
   <body>
 
-    <div class="container" style="margin-top:10%;">
+    <div class="container" style="margin-top:5%;">
+      <div class="row">
+        <a href="<?php echo base_url('user/user_profile');?>" >Home</a> | 
+        <a href="<?php echo base_url('user/users_list_view');?>" >Users</a> | 
+        <a href="<?php echo base_url('category/categories_list_view');?>" >Categories</a> | 
+        <a href="<?php echo base_url('expense/expense_list_view');?>" >Expenses</a> | <a href="<?php echo base_url('user/user_logout');?>" >
+          <img src="<?php echo base_url();?>public/images/lgout.gif" />
+          Logout
+        </a>
+      </div>
       <div class="row">
         <div class="col-md-4">
           <table class="table table-bordered table-striped">
+            <!-- <tr>
+              <th class="col-md-2 text-left" colspan="6">
+                <a href="<?php echo base_url('user/add_user_view'); ?>">
+                  <img src="<?php echo base_url();?>public/images/i_add.png" />  
+                  Add User
+                </a>
+              </th>
+            </tr> -->
             <tr>
               <th colspan="2"><h4 class="text-center">User Info</h3></th>
             </tr>
@@ -41,10 +58,6 @@
           </table>
         </div>
       </div>
-      <a href="<?php echo base_url('user/user_logout');?>" >  <button type="button" class="btn-primary">Logout</button></a> 
-      <a href="<?php echo base_url('user/user_profile');?>" >Home</a> | 
-      <a href="<?php echo base_url('user/users_list_view');?>" >Users List</a> | 
-      <a href="<?php echo base_url('expense/expense_list_view');?>" >Expense List</a>
     </div>
   </body>
 </html>

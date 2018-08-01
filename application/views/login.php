@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="no title">
   </head>
   <body>
-    <div class="container" style="margin-top:10%;">
+    <div class="container" style="margin-top:5%;">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-success">

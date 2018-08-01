@@ -1,11 +1,12 @@
 <?php
 
-class Expense extends CI_Controller {
+class Category extends CI_Controller {
 
   public function __construct(){
 
       parent::__construct();
   		$this->load->helper('url');
+      $this->load->model('category_model');
    		$this->load->model('expense_model');
       $this->load->model('user_model');
       $this->load->library('session');

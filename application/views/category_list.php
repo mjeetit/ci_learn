@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>All Expenses</title>
+    <title>Categories</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
@@ -24,7 +24,7 @@
               <th class="text-left" colspan="7">
                 <a href="<?php echo base_url('expense/add_expense_view');?>" >
                   <img src="<?php echo base_url();?>public/images/i_add.png" />
-                  Add Expense
+                  Add Category
                 </a>
               </th>
             </tr>
