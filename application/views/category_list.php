@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Categories</title>
+    <title>All Expenses</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
@@ -10,7 +10,7 @@
       <div class="row">
         <a href="<?php echo base_url('user/user_profile');?>" >Home</a> | 
         <a href="<?php echo base_url('user/users_list_view');?>" >Users</a> | 
-        <a href="<?php echo base_url('category/categories_list_view');?>" >Categories</a> | <a href="<?php echo base_url('expense/expense_list_view');?>" >Expenses</a> | 
+        <a href="<?php echo base_url('category/category_list_view');?>" >Categories</a> | <a href="<?php echo base_url('expense/expense_list_view');?>" >Expenses</a> | 
         <a href="<?php echo base_url('user/user_logout');?>" >
           <img src="<?php echo base_url();?>public/images/lgout.gif" />
           Logout
@@ -22,7 +22,7 @@
           <table class="table table-bordered table-striped">
             <tr>
               <th class="text-left" colspan="7">
-                <a href="<?php echo base_url('expense/add_expense_view');?>" >
+                <a href="<?php echo base_url('category/add_category_view');?>" >
                   <img src="<?php echo base_url();?>public/images/i_add.png" />
                   Add Category
                 </a>
@@ -30,38 +30,20 @@
             </tr>
             <tr>
               <th class="text-center">s.no</th>
-              <th class="text-center">Expese Category</th>
-              <th class="text-center">Expense Amount</th>
-              <th class="text-center">Expense By</th>
-              <th class="text-center">Expense Date</th>
-              <th class="text-center">Createddate</th>
+              <th class="text-center">Category Name</th>
+              <th class="text-center">Description</th>
               <th class="text-center">Action</th>
             </tr>
-            <?php foreach($allExpensesList as $expenses){ ?>  
+            <?php foreach($allCategoryList as $category){ ?>  
               <tr>
                 <td class="text-center">
-                  <?php echo $expenses->expense_id; ?>
+                  <?php echo $category->expense_category_id; ?>
                 </td>
                 <td class="text-center">
-                  <?php 
-                    $date = $expenses->expense_date;
-                    echo date("d-m-Y", strtotime($date));
-                  ?>
+                  <?php echo $category->expense_category_name; ?>
                 </td>
                 <td class="text-center">
-                  <?php echo $expenses->expense_category_name; ?>
-                </td>
-                <td class="text-center">
-                  <?php echo $expenses->expense_amount; ?>
-                </td>
-                <td class="text-center">
-                  <?php echo $expenses->user_name; ?>
-                </td>
-                <td class="text-center">
-                  <?php 
-                    $date = $expenses->createddate;
-                    echo date("d-m-Y h:i:s", strtotime($date));
-                  ?>
+                  <?php echo $category->Description; ?>
                 </td>
                 <td class="text-center">
                   <a href="<?php echo base_url('user/expense_edit_view');?>" ><img src="<?php echo base_url();?>public/images/pencil.gif" /></a> | 

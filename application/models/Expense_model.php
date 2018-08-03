@@ -10,9 +10,8 @@ class Expense_model extends CI_model{
     $this->db->where('expense_detail.deleted','0');
     $this->db->order_by("expense_id", "ASC");
     $query = $this->db->get();
-    //echo "line 9 expense model <pre>"; print_r($query->result()); die;
+
     return $query->result();
-  
   }
 
   public function getAllExpenseCategoryList(){
@@ -25,17 +24,6 @@ class Expense_model extends CI_model{
 
     return $query->result();
   }
-
-  /*public function getExpenseCategoryName($expense_category_id){
-
-    $this->db->select('expense_category_name');
-    $this->db->from('expense_category');
-    $this->db->where('expense_category_id',$expense_category_id);
-    $this->db->where('expense_category_status','1');
-    $query = $this->db->get();
-
-    return $query->result();
-  }*/
 
   public function insert_fresh_expense($fresh_expense){
 

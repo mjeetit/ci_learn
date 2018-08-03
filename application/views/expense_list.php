@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>All Expenses</title>
+    <title>Categories</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
@@ -10,7 +10,7 @@
       <div class="row">
         <a href="<?php echo base_url('user/user_profile');?>" >Home</a> | 
         <a href="<?php echo base_url('user/users_list_view');?>" >Users</a> | 
-        <a href="<?php echo base_url('category/categories_list_view');?>" >Categories</a> | <a href="<?php echo base_url('expense/expense_list_view');?>" >Expenses</a> | 
+        <a href="<?php echo base_url('category/category_list_view');?>" >Categories</a> | <a href="<?php echo base_url('expense/expense_list_view');?>" >Expenses</a> | 
         <a href="<?php echo base_url('user/user_logout');?>" >
           <img src="<?php echo base_url();?>public/images/lgout.gif" />
           Logout
@@ -24,7 +24,7 @@
               <th class="text-left" colspan="7">
                 <a href="<?php echo base_url('expense/add_expense_view');?>" >
                   <img src="<?php echo base_url();?>public/images/i_add.png" />
-                  Add Expense
+                  Add Category
                 </a>
               </th>
             </tr>

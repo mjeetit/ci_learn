@@ -8,6 +8,7 @@ class Expense extends CI_Controller {
   		$this->load->helper('url');
    		$this->load->model('expense_model');
       $this->load->model('user_model');
+      $this->load->model('category_model');
       $this->load->library('session');
   }
 
@@ -44,8 +45,6 @@ class Expense extends CI_Controller {
       'description'=>$this->input->post('expense_description')
     );
 
-    //echo "line 46 expense controller <pre>"; print_r($fresh_expense); die;
-
     //server side validation of input values
     if($fresh_expense['expense_category'] == '' || $fresh_expense['expense_amount'] == '' || $fresh_expense['expense_by'] == ''){
 
@@ -61,6 +60,16 @@ class Expense extends CI_Controller {
     }
 
   }
+
+  /*public function category_list_view(){
+
+    $allCategoryList = $this->category_model->getAllCategoryList();    
+    $data = array(
+      "allCategoryList" => $allCategoryList
+    );
+
+    $this->load->view("category_list.php",$data);
+  }*/
 
 
 }

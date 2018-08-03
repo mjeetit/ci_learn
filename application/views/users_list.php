@@ -11,7 +11,7 @@
       <div class="row">
         <a href="<?php echo base_url('user/user_profile');?>" >Home</a> | 
         <a href="<?php echo base_url('user/users_list_view');?>" >Users</a> | 
-        <a href="<?php echo base_url('category/categories_list_view');?>" >Categories</a> | 
+        <a href="<?php echo base_url('category/category_list_view');?>" >Categories</a> | 
         <a href="<?php echo base_url('expense/expense_list_view');?>" >Expenses</a> | 
         <a href="<?php echo base_url('user/user_logout');?>" >
           <img src="<?php echo base_url();?>public/images/lgout.gif" />
