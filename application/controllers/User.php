@@ -93,5 +93,42 @@ class User extends CI_Controller {
       );
     $this->load->view('users_list',$data);
   }
+
+  public function add_user_view(){
+
+    $this->load->view('add_user.php');
+  }
+
+
+  public function add_user(){
+
+    $user=array(
+      'user_name'=>$this->input->post('username'),
+      'user_email'=>$this->input->post('useremail'),
+      'user_password'=>md5($this->input->post('userpassword')),
+      'user_age'=>$this->input->post('userage'),
+      'user_mobile'=>$this->input->post('usermobile')
+    );
+
+    $email_check=$this->user_model->email_check($user['user_email']);
+
+    if($email_check){
+      $this->user_model->register_user($user);
+      $this->session->set_flashdata('success_msg', 'User added sucessfully !');
+   
+      redirect('user/users_list_view');
+    
+    }else{
+
+      $this->session->set_flashdata('error_msg', 'E-mail already exist !');
+      redirect('user/add_user_view');
+    }
+  }
+
+
+  public function user_delete(){
+  
+   /* echo "131 delete functionality = <pre>"; print_r($this->input->post('username')); die;*/
+  }
 }
 ?>

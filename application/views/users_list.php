@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>All Users</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="<?php echo base_url();?>public/css/bootstrap.min.css">
+  
   </head>
   <body>
+  
   <?php //echo "17 view page <pre>"; print_r($allUsersList); die;   ?>
     <div class="container" style="margin-top:5%;">
       <div class="row">
@@ -18,12 +21,23 @@
           Logout
         </a>
       </div>
+      
+      <?php
+        $success_msg=$this->session->flashdata('success_msg');
+        if($success_msg){
+      ?>  
+        <div class="alert alert-success">
+          <strong>Sucess :  </strong><?php echo $success_msg; ?>
+        </div>
+      <?php  } ?>
+
       <div class="row">
         <div class=""><!--<div class="col-md-4">-->
           <table class="table table-bordered table-striped">
             <tr>
               <th class="text-left" colspan="7">
-                <a href="<?php  echo base_url('user'); //echo base_url('user/add_user_view'); ?>">
+                <a href="<?php  echo base_url('user/add_user_view'); 
+                //echo base_url('user/add_user_view'); ?>">
                   <img src="<?php echo base_url();?>public/images/i_add.png" />  
                   Add User
                 </a>
@@ -61,11 +75,11 @@
                       ?>
                   </td>
                   <td class="text-center">
-                    <a href="<?php echo base_url('user/expense_edit_view');?>" ><img src="<?php echo base_url();?>public/images/pencil.gif" /></a> | 
-                    <a href="<?php echo base_url('user/expense_detail_view');?>" ><img src="<?php echo base_url();?>public/images/view_detail.png" /></a> | 
-                    <a href="<?php echo base_url('user/expense_delete');?>" ><img src="<?php echo base_url();?>public/images/delete_image.png" /></a> 
+                    <a href="<?php echo base_url('user/user_edit_view');?>" ><img src="<?php echo base_url();?>public/images/pencil.gif" title="Edit" /></a>&nbsp;| 
+                    <a href="<?php echo base_url('user/user_detail_view');?>" ><img src="<?php echo base_url();?>public/images/view_detail.png" title="Detail" /></a>&nbsp;| 
+                    <a href="<?php echo base_url('user/user_delete');?>" ><img src="<?php echo base_url();?>public/images/delete_image.png" title="Delete" onclick="deleteUser('<?php echo $users->user_id;?>')"/></a> 
                   </td>
-                </tr>  
+                </tr>
             <?php }  ?>
             
           </table>
@@ -74,3 +88,15 @@
     </div>
   </body>
 </html>
+<script type="text/javascript">
+function deleteUser(id)
+{
+  alert("user id = "+id);
+  var r=confirm("Do you really want to delete?");
+  if (r==true)
+  {
+    //window.location.href="http://www.reporting.jclifecare.com/Secondary-Sale/delete/id/"+id;
+    window.location.href="http://localhost/ariskon/reporting/Secondary-Sale/delete/id/"+id;
+  }
+}
+ </script>
